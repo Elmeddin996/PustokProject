@@ -24,7 +24,7 @@ namespace PustokProject.Controllers
             if (book == null) return StatusCode(404);
 
             //return Json(new { book = book });
-            return PartialView("_BookModalPartial", book);
+            return PartialView("_BookModelPartial", book);
         }
     }
 }
