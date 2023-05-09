@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PustokProject.DAL.DataAccess;
+using PustokProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,9 @@ builder.Services.AddDbContext<DataContext>(opt =>
 {
     opt.UseSqlServer(@"Server=DESKTOP-AMTUISF\SQLEXPRESS;Database=PustokProject;Trusted_Connection=true");
 });
+
+builder.Services.AddScoped<LayoutServices>();
+
 
 var app = builder.Build();
 

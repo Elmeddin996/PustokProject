@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PustokProject.DAL.DataAccess;
 
@@ -11,9 +12,10 @@ using PustokProject.DAL.DataAccess;
 namespace PustokProject.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230509180440_BookTagsTableCreated")]
+    partial class BookTagsTableCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,22 +151,6 @@ namespace PustokProject.Migrations
                     b.ToTable("Genres");
                 });
 
-            modelBuilder.Entity("PustokProject.Models.Setting", b =>
-                {
-                    b.Property<string>("Key")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.HasKey("Key");
-
-                    b.ToTable("Settings");
-                });
-
             modelBuilder.Entity("PustokProject.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -248,7 +234,7 @@ namespace PustokProject.Migrations
             modelBuilder.Entity("PustokProject.Models.BookTag", b =>
                 {
                     b.HasOne("PustokProject.Models.Book", "Book")
-                        .WithMany("BookTags")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -267,8 +253,6 @@ namespace PustokProject.Migrations
             modelBuilder.Entity("PustokProject.Models.Book", b =>
                 {
                     b.Navigation("BookImages");
-
-                    b.Navigation("BookTags");
                 });
 #pragma warning restore 612, 618
         }

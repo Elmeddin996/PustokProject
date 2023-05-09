@@ -19,6 +19,7 @@ namespace PustokProject.Controllers
             Book book = _context.Books
                 .Include(x => x.Author)
                 .Include(x => x.BookImages)
+                .Include(x => x.BookTags).ThenInclude(x=>x.Tag)
                 .FirstOrDefault(x => x.Id == id);
 
             if (book == null) return StatusCode(404);

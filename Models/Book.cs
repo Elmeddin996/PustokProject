@@ -32,6 +32,7 @@ namespace PustokProject.Models
         public Genre Genre { get; set; }
         public Author Author { get; set; }
         public List<BookImage> BookImages { get; set; }
+        public List<BookTag> BookTags { get; set; }
 
     }
 }

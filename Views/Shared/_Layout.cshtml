@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using PustokProject.Services
+@inject LayoutServices _layoutService
+@{
+    var settings = _layoutService.GetSettings();
+    var genres = _layoutService.GetGenres();
+}
+
+<!DOCTYPE html>
 <html lang="zxx">
 
 
@@ -21,7 +28,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 ">
                             <a href="index.html" class="site-brand">
-                                <img src="~/image/logo.png" alt="">
+                                <img src="~/image/@settings["HeaderLogo"]" alt="">
                             </a>
                         </div>
                         <div class="col-lg-3">
@@ -31,7 +38,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Free Support 24/7</p>
-                                    <p class="font-weight-bold number">+01-202-555-0181</p>
+                                    <p class="font-weight-bold number">@settings["SupportPhone"]</p>
                                 </div>
                             </div>
                         </div>
@@ -900,18 +907,16 @@
                 <div class=" col-xl-3 col-lg-4 col-sm-6">
                     <div class="single-footer pb--40">
                         <div class="brand-footer footer-title">
-                            <img src="~/image/logo--footer.png" alt="">
+                            <img src="~/image/@settings["FooterLogo"]" alt="">
                         </div>
                         <div class="footer-contact">
                             <p>
                                 <span class="label">Address:</span><span class="text">
-                                    Example Street 98, HH2 BacHa, New
-                                    York,
-                                    USA
+                                    @settings["Adress"]
                                 </span>
                             </p>
-                            <p><span class="label">Phone:</span><span class="text">+18088 234 5678</span></p>
-                            <p><span class="label">Email:</span><span class="text">suport@hastech.com</span></p>
+                            <p><span class="label">Phone:</span><span class="text">@settings["ContactPhone"]</span></p>
+                            <p><span class="label">Email:</span><span class="text">@settings["Email"]</span></p>
                         </div>
                     </div>
                 </div>

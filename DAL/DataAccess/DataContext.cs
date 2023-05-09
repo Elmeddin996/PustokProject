@@ -14,6 +14,15 @@ namespace PustokProject.DAL.DataAccess
         public DbSet<Book>Books { get; set; }
         public DbSet<BookImage> BookImages { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<BookTag> BookTags { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<BookTag>().HasKey(x => new { x.BookId, x.TagId });
+            modelBuilder.Entity<Setting>().HasKey(x => x.Key);
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 }
