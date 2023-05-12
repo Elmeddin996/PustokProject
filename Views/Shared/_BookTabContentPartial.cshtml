@@ -35,7 +35,7 @@
                                 <img src="~/image/products/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==false)?.ImageName" alt="">
                             </a>
                             <div class="hover-btns">
-                                <a href="cart.html" class="single-btn">
+                                <a asp-action="addtobasket" asp-controller="book" asp-route-id="@item.Id" class="single-btn addtobasket">
                                     <i class="fas fa-shopping-basket"></i>
                                 </a>
                                 <a href="wishlist.html" class="single-btn">
