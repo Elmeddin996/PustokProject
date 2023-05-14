@@ -1,25 +1,25 @@
-﻿@model List<BasketItemViewModel>
+﻿@model BasketViewModel
 
 <div class="cart-total">
     <span class="text-number">
-        1
+        @Model.Items.Count
     </span>
     <span class="text-item">
         Shopping Cart
     </span>
     <span class="price">
-        £0.00
+        £@Model.TotalPrice.ToString("0.00")
         <i class="fas fa-chevron-down"></i>
     </span>
 </div>
 <div class="cart-dropdown-block">
     <div class=" single-cart-block ">
 
-        @foreach (var bi in Model)
+        @foreach (var bi in Model.Items)
         {
             <div class="cart-product">
                 <a href="product-details.html" class="image">
-                    <img src="~/image/products/cart-product-1.jpg" alt="">
+                    <img src="~/image/products/@bi.Book.BookImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName" alt="">
                 </a>
                 <div class="content">
                     <h3 class="title">
@@ -27,8 +27,8 @@
                             @bi.Book.Name
                         </a>
                     </h3>
-                    <p class="price"><span class="qty">@bi.Count ×</span> £ @bi.Book.SalePrice</p>
-                    <button class="cross-btn"><i class="fas fa-times"></i></button>
+                    <p class="price"><span class="qty">@bi.Count ×</span> £@((bi.Book.DiscountPercent>0?(bi.Book.SalePrice*(100-bi.Book.DiscountPercent)/100):bi.Book.SalePrice).ToString("0.00"))</p>
+                    <a asp-action="removebasket" asp-controller="book" asp-route-id="@bi.Book.Id" class="cross-btn removefrombasket"><i class="fas fa-times"></i></a>
                 </div>
             </div>
 

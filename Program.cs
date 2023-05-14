@@ -12,6 +12,7 @@ builder.Services.AddDbContext<DataContext>(opt =>
 
 builder.Services.AddScoped<LayoutServices>();
 
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
@@ -28,6 +29,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

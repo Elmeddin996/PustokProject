@@ -3,6 +3,7 @@
 @{
     var settings = _layoutService.GetSettings();
     var genres = _layoutService.GetGenres();
+    var basket = _layoutService.GetBasket();
 }
 
 <!DOCTYPE html>
@@ -333,7 +334,7 @@
                                         <span>or</span><a href="login-register.html">Register</a>
                                     </div>
                                     <div class="cart-block">
-                                      
+                                      @Html.Partial("_BasketPartialView",basket)
 
                                     </div>
                                 </div>

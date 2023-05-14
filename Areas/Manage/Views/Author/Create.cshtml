@@ -1,0 +1,19 @@
+﻿@model Author
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1>Create New Author</h1>
+        <form asp-action="create" method="post">
+            <div class="form-group">
+                <label asp-for="FullName">Full Name</label>
+                <input class="form-control" placeholder="Enter Author Name" asp-for="FullName">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+

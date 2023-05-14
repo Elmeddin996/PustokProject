@@ -66,19 +66,56 @@ namespace PustokProject.Controllers
 
             Response.Cookies.Append("Basket", JsonConvert.SerializeObject(cookieItems));
 
-            List<BasketItemViewModel> basketItems = new List<BasketItemViewModel>();
+            BasketViewModel bv = new BasketViewModel();
 
-            foreach (var ci in cookieItems) 
+            foreach (var ci in cookieItems)
             {
                 BasketItemViewModel bi = new BasketItemViewModel
                 {
                     Count = ci.Count,
-                    Book = _context.Books.FirstOrDefault(x => x.Id == ci.BookId)
+                    Book = _context.Books.Include(x => x.BookImages).FirstOrDefault(x => x.Id == ci.BookId)
                 };
-                basketItems.Add(bi);
+                bv.Items.Add(bi);
+                bv.TotalPrice += (bi.Book.DiscountPercent > 0 ? (bi.Book.SalePrice * (100 - bi.Book.DiscountPercent) / 100) : bi.Book.SalePrice) * bi.Count;
             }
 
-            return PartialView("_BasketPartialView",basketItems);
+            return PartialView("_BasketPartialView", bv);
+        }
+
+
+        public IActionResult RemoveBasket(int id)
+        {
+            var basketStr = Request.Cookies["basket"];
+            if (basketStr == null)
+                return StatusCode(404);
+
+            List<BasketItemCookieViewModel> cookieItems = JsonConvert.DeserializeObject<List<BasketItemCookieViewModel>>(basketStr);
+
+            BasketItemCookieViewModel item = cookieItems.FirstOrDefault(x => x.BookId == id);
+
+            if (item == null)
+                return StatusCode(404);
+
+            if (item.Count > 1)
+                item.Count--;
+            else
+                cookieItems.Remove(item);
+
+            Response.Cookies.Append("basket", JsonConvert.SerializeObject(cookieItems));
+
+            BasketViewModel bv = new BasketViewModel();
+            foreach (var ci in cookieItems)
+            {
+                BasketItemViewModel bi = new BasketItemViewModel
+                {
+                    Count = ci.Count,
+                    Book = _context.Books.Include(x => x.BookImages).FirstOrDefault(x => x.Id == ci.BookId)
+                };
+                bv.Items.Add(bi);
+                bv.TotalPrice += (bi.Book.DiscountPercent > 0 ? (bi.Book.SalePrice * (100 - bi.Book.DiscountPercent) / 100) : bi.Book.SalePrice) * bi.Count;
+            }
+
+            return PartialView("_BasketPartialView", bv);
         }
 
         public IActionResult ShowBasket()

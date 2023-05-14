@@ -23,7 +23,29 @@ $(document).on("click", ".addtobasket", function (e) {
     e.preventDefault();
     let url = $(this).attr("href");
     fetch(url)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                alert("Xeta Bash Verdi")
+            }
+            return response.text()
+        })
+        .then(data => {
+            $(".cart-block").html(data)
+        })
+})
+
+
+$(document).on("click", ".removefrombasket", function (e) {
+    e.preventDefault();
+    let url = $(this).attr("href");
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                alert("xeta bas verdi")
+                return
+            }
+            return response.text()
+        })
         .then(data => {
             $(".cart-block").html(data)
         })
