@@ -40,5 +40,48 @@ namespace PustokProject.Areas.Manage.Controllers
 
             return RedirectToAction("index");
         }
+
+        public IActionResult Edit(int id)
+        {
+            Author author = _context.Authors.Find(id);
+
+            if (author == null) return StatusCode(404);
+
+            return View(author);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Author author)
+        {
+            if (!ModelState.IsValid) return View();
+
+            Author existAuthor = _context.Authors.Find(author.Id);
+
+            if (existAuthor == null) return StatusCode(404);
+
+            if (author.FullName != existAuthor.FullName && _context.Authors.Any(x => x.FullName == author.FullName))
+            {
+                ModelState.AddModelError("Name", "Name is already taken");
+                return View();
+            }
+
+            existAuthor.FullName = author.FullName;
+
+            _context.SaveChanges();
+
+            return RedirectToAction("index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            Author author = _context.Authors.Find(id);
+
+            if (author == null) return StatusCode(404);
+
+            _context.Authors.Remove(author);
+            _context.SaveChanges();
+
+            return StatusCode(200);
+        }
     }
 }

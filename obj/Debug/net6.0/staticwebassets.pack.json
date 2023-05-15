@@ -461,6 +461,10 @@
       "PackagePath": "staticwebassets\\manage\\js\\demo\\datatables-demo.js"
     },
     {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\manage\\js\\main.js",
+      "PackagePath": "staticwebassets\\manage\\js\\main.js"
+    },
+    {
       "Id": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\manage\\js\\sb-admin-2.js",
       "PackagePath": "staticwebassets\\manage\\js\\sb-admin-2.js"
     },

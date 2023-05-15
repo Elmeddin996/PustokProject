@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Manage\ViewModels\" />
-    <Folder Include="wwwroot\manage\" />
   </ItemGroup>
 
 </Project>

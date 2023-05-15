@@ -1,7 +1,7 @@
 ﻿@model PaginatedList<Slider>
 @{
     ViewData["Title"] = "Index";
-    int order = 0;
+    int order = (Model.PageIndex-1)*1;
 }
 
 <div class="row justify-content-center">
@@ -50,7 +50,7 @@
                         <td>@item.Price</td>
                         <td>@item.ButtonText</td>
                         <td>
-                            <a class="btn btn-warning">Edit</a>
+                            <a class="btn btn-warning" asp-action="edit" asp-route-id="@item.Id">Edit</a>
                             <a class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
