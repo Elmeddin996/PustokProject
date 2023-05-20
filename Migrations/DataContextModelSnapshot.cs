@@ -173,6 +173,11 @@ namespace PustokProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("BtnUrl")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
                     b.Property<string>("ButtonText")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -183,7 +188,11 @@ namespace PustokProject.Migrations
 
                     b.Property<string>("Image")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Order")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
@@ -218,7 +227,7 @@ namespace PustokProject.Migrations
             modelBuilder.Entity("PustokProject.Models.Book", b =>
                 {
                     b.HasOne("PustokProject.Models.Author", "Author")
-                        .WithMany()
+                        .WithMany("Books")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -262,6 +271,11 @@ namespace PustokProject.Migrations
                     b.Navigation("Book");
 
                     b.Navigation("Tag");
+                });
+
+            modelBuilder.Entity("PustokProject.Models.Author", b =>
+                {
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("PustokProject.Models.Book", b =>

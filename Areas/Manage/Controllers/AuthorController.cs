@@ -35,6 +35,7 @@ namespace PustokProject.Areas.Manage.Controllers
         [HttpPost]
         public IActionResult Create(Author author)
         {
+            if (!ModelState.IsValid) return View();
             _context.Authors.Add(author);
             _context.SaveChanges();
 

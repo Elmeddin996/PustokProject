@@ -1,0 +1,50 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1>Create</h1>
+        <form asp-action="create" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Order">Order</label>
+                <input class="form-control" asp-for="Order" value="@ViewBag.NextOrder">
+                <span class="text-danger" asp-validation-for="Order"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title">Title</label>
+                <input class="form-control" asp-for="Title">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+              
+            <div class="form-group">
+                <label asp-for="Desc">Desc</label>
+                <textarea class="form-control" asp-for="Desc" rows="2"></textarea>
+                <span class="text-danger" asp-validation-for="Desc"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ButtonText">BtnText</label>
+                <input class="form-control" asp-for="ButtonText">
+                <span class="text-danger" asp-validation-for="ButtonText"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BtnUrl">BtnUrl</label>
+                <input class="form-control" asp-for="BtnUrl">
+                <span class="text-danger" asp-validation-for="BtnUrl"></span>
+            </div>
+              
+               <div class="form-group">
+                <label asp-for="ImageFile">Image</label>
+                <input  class="form-control" asp-for="ImageFile">
+                <span class="text-danger" asp-validation-for="ImageFile"></span>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @Html.Partial("_ValidationScriptsPartial")
+}

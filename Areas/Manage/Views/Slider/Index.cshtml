@@ -7,21 +7,7 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <h1>Slider Datas</h1>
-        <br />
-        <form asp-action="index" method="get">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <input type="text" name="search" class="form-control" id="textInput" value="@ViewBag.Search" placeholder="Search">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                <br />
-                <br />
-            </div>
-        </form>
+        
         <br />
         <a class="btn btn-primary" asp-action="create">Create</a>
         <br />
@@ -46,12 +32,12 @@
                         <th scope="row">@order</th>
                         <td>@item.Title</td>
                         <td>@item.Desc</td>
-                        <td><img src="~/image/bg-images/@item.Image" width="70"/></td>
+                        <td><img src="~/uploads/sliders/@item.Image" width="70"/></td>
                         <td>@item.Price</td>
                         <td>@item.ButtonText</td>
                         <td>
                             <a class="btn btn-warning" asp-action="edit" asp-route-id="@item.Id">Edit</a>
-                            <a class="btn btn-danger">Delete</a>
+                            <a class="btn btn-danger delete-btn" asp-action="delete" asp-route-id="@item.Id">Delete</a>
                         </td>
                     </tr>
                 }

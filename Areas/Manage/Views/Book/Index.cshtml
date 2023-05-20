@@ -1,26 +1,32 @@
 ﻿@model PaginatedList<Book>
 @{
     ViewData["Title"] = "Index";
-    int order = (Model.PageIndex-1)*3;
+    int order = 0;
 }
 
 <div class="row justify-content-center">
     <div class="col-md-8">
         <h1>Books</h1>
-        <form asp-action="index" method="get">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <input type="text" name="search" class="form-control" id="textInput" value="@ViewBag.Search" placeholder="Search">
+        <div class="row">
+            <div class="col-md-8">
+                <form asp-action="index" method="get">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <input type="text" name="search" class="form-control" id="textInput" value="@ViewBag.Search" placeholder="Search">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-                <br />
-                <br />
+                </form>
             </div>
-        </form>
+            <div class="col-md-4">
+                <a class="btn btn-primary" asp-action="create">Create</a>
+            </div>
+        </div>
+
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -30,6 +36,7 @@
                     <th scope="col">Author</th>
                     <th scope="col">SalePrice</th>
                     <th scope="col">CostPrice</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -45,10 +52,11 @@
                         <td>@item.Author.FullName</td>
                         <td>@item.SalePrice</td>
                         <td>@item.CostPrice</td>
+                        <td><img  width="50" src="~/uploads/books/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName"/></td>
 
                         <td>
-                            <a class="btn btn-warning">Edit</a>
-                            <a class="btn btn-danger">Delete</a>
+                            <a class="btn btn-warning" asp-action="edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn btn-danger" asp-action="delete" asp-route-id="@item.Id">Delete</a>
                         </td>
                     </tr>
                 }
@@ -70,5 +78,4 @@
         </nav>
     </div>
 </div>
-
 

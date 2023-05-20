@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Manage\ViewModels\" />
+    <Folder Include="wwwroot\uploads\authors\" />
   </ItemGroup>
 
 </Project>
