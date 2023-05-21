@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Manage\ViewModels\" />
-    <Folder Include="wwwroot\uploads\authors\" />
   </ItemGroup>
 
 </Project>

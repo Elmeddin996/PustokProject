@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PustokProject.DAL.DataAccess;
+using PustokProject.Helpers;
 using PustokProject.Models;
 using PustokProject.ViewModels;
 
@@ -10,8 +11,8 @@ namespace PustokProject.Areas.Manage.Controllers
     public class AuthorController : Controller
     {
         private readonly DataContext _context;
-
-        public AuthorController(DataContext context)
+        public IWebHostEnvironment _env;
+        public AuthorController(DataContext context, IWebHostEnvironment env)
         {
             _context = context;
         }
@@ -33,9 +34,18 @@ namespace PustokProject.Areas.Manage.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+
         public IActionResult Create(Author author)
         {
             if (!ModelState.IsValid) return View();
+
+            
+
+            author.ImageName = FileManager.Save(_env.WebRootPath, "uploads/authors", author.AutorImageFile);
+            
+
+
             _context.Authors.Add(author);
             _context.SaveChanges();
 

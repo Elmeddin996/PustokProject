@@ -31,6 +31,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">FullName</th>
+                    <th scope="col">Image</th>
                     <th scope="col">BookCount</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -43,6 +44,7 @@
                     <tr>
                         <th scope="row">@order</th>
                         <td>@item.FullName</td>
+                        <td> <img src="~/uploads/authors/@item.ImageName" /> </td>
                         <td>@item.Books.Count</td>
                         <td>
                             <a class="btn btn-warning" asp-action="edit" asp-route-id="@item.Id">Edit</a>

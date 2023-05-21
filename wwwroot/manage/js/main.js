@@ -1,4 +1,4 @@
-﻿﻿$(document).on("click", ".delete-btn", function (e) {
+﻿$(document).on("click", ".delete-btn", function (e) {
     e.preventDefault();
     let url = $(this).attr("href");
 
@@ -29,10 +29,5 @@
             
         }
     })
-
-    
  })
 
-$(document).on("click", ".remove-icon", function (e) {
-    $(this).parent().remove()
-})

@@ -87,16 +87,17 @@
                 {
                     <div class="img-box" style="position:relative;margin-right:14px">
                         <span class="remove-icon">x</span>
-                            <input type="hidden" value="@item.Id" name="BookImageIds">
-                            <img width="200" src="~/uploads/books/@item.ImageName" />
+                        <input type="hidden" value="@item.Id" name="BookImageIds">
+                        <img width="200" src="~/uploads/books/@item.ImageName" />
                     </div>
                 }
-                
+
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>
+
 
 @section Scripts{
     @Html.Partial("_ValidationScriptsPartial")

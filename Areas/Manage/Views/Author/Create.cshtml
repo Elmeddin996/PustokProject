@@ -7,10 +7,15 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <h1>Create New Author</h1>
-        <form asp-action="create" method="post">
+        <form asp-action="create" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label asp-for="FullName">Full Name</label>
                 <input class="form-control" placeholder="Enter Author Name" asp-for="FullName">
+            </div>
+            <div class="form-group">
+                <label asp-for="AutorImageFile">AutorImageFile</label>
+                <input class="form-control" asp-for="AutorImageFile">
+                <span class="text-danger" asp-validation-for="AutorImageFile"></span>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

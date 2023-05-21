@@ -35,6 +35,9 @@ namespace PustokProject.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
@@ -55,7 +58,6 @@ namespace PustokProject.Migrations
                         .HasColumnType("money");
 
                     b.Property<string>("Desc")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -103,7 +105,6 @@ namespace PustokProject.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("PosterStatus")
@@ -156,7 +157,6 @@ namespace PustokProject.Migrations
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("Value")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
@@ -174,20 +174,16 @@ namespace PustokProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("BtnUrl")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("ButtonText")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Desc")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -198,7 +194,6 @@ namespace PustokProject.Migrations
                         .HasColumnType("money");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
