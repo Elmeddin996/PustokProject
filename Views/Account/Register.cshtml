@@ -1,0 +1,70 @@
+﻿@model MemberRegisterViewModel
+@{
+	ViewData["Title"] = "Register";
+}
+
+
+<section class="breadcrumb-section">
+	<h2 class="sr-only">Site Breadcrumb</h2>
+	<div class="container">
+		<div class="breadcrumb-contents">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active">Login</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
+</section>
+<!--=============================================
+=            Login Register page content         =
+=============================================-->
+<main class="page-section inner-page-sec-padding-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb--30 mb-lg--0">
+				<!-- Login Form s-->
+				<form  method="post">
+					<div class="login-form">
+						<h4 class="login-title">New Customer</h4>
+						<p><span class="font-weight-bold">I am a new customer</span></p>
+						<div class="row">
+							<div class="col-md-12 col-12 mb--15">
+								<label asp-for="FullName">Full Name</label>
+								<input asp-for="FullName" class="mb-0 form-control">
+								<span class="text-danger" asp-validation-for="FullName"></span>
+							</div>
+							<div class="col-md-12 col-12 mb--15">
+								<label asp-for="Email">Email</label>
+								<input asp-for="Email" class="mb-0 form-control">
+								<span class="text-danger" asp-validation-for="Email"></span>
+							</div>
+							<div class="col-md-12 col-12 mb--15">
+								<label asp-for="UserName">UserName</label>
+								<input asp-for="UserName" class="mb-0 form-control">
+								<span class="text-danger" asp-validation-for="UserName"></span>
+							</div>
+							<div class="col-md-12 col-12 mb--15">
+								<label asp-for="Password">Password</label>
+								<input asp-for="Password" class="mb-0 form-control">
+								<span class="text-danger" asp-validation-for="Password"></span>
+							</div>
+							<div class="col-md-12 col-12 mb--15">
+								<label asp-for="ConfirmPassword">Confirm Password</label>
+								<input asp-for="ConfirmPassword" class="mb-0 form-control">
+								<span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+							</div>
+							<div class="col-md-12 col-12 mb--15">
+							<div class="text-danger" asp-validation-summary="ModelOnly"></div>
+							</div>
+							<div class="col-md-12">
+								<button type="submit" class="btn btn-outlined">Register</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>

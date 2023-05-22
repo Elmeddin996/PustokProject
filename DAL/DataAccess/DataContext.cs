@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PustokProject.Models;
 
 namespace PustokProject.DAL.DataAccess
 {
-    public class DataContext:DbContext
+    public class DataContext:IdentityDbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
@@ -16,6 +17,7 @@ namespace PustokProject.DAL.DataAccess
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<BookTag> BookTags { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

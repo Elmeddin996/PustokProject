@@ -11,10 +11,11 @@ namespace PustokProject.Areas.Manage.Controllers
     public class AuthorController : Controller
     {
         private readonly DataContext _context;
-        public IWebHostEnvironment _env;
+        private readonly IWebHostEnvironment _env;
         public AuthorController(DataContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
         public IActionResult Index(int page = 1, string search = null)
         {
