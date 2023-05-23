@@ -21,33 +21,33 @@ namespace PustokProject.Controllers
         }
 
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Login(MemberLoginViewModel memberVM, string returnUrl = null)
-		{
-			AppUser user = await _userManager.FindByNameAsync(memberVM.UserName);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(MemberLoginViewModel loginVM, string returnUrl = null)
+        {
+            if (!ModelState.IsValid) return View();
 
-			if (user == null || user.IsAdmin)
-			{
-				ModelState.AddModelError("", "UserName or Password incorrect");
-				return View();
-			}
+            AppUser user = await _userManager.FindByNameAsync(loginVM.UserName);
 
-			var result = await _signInManager.PasswordSignInAsync(user, memberVM.Password, false, false);
+            if (user == null || user.IsAdmin)
+            {
+                ModelState.AddModelError("", "UserName or Password incorrect");
+                return View();
+            }
 
-			if (!result.Succeeded)
-			{
-				ModelState.AddModelError("", "UserName or Password incorrect");
-				return View();
-			}
+            var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
 
-			if (returnUrl != null) return Redirect(returnUrl);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "UserName or Password incorrect");
+                return View();
+            }
 
-			return RedirectToAction("index", "dashboard");
-		}
+            return returnUrl != null ? Redirect(returnUrl) : RedirectToAction("index", "home");
+        }
 
 
-		public IActionResult Register()
+        public IActionResult Register()
         {
             return View();
         }
@@ -85,6 +85,8 @@ namespace PustokProject.Controllers
                     ModelState.AddModelError("", err.Description);
                 return View();
             }
+
+            await _userManager.AddToRoleAsync(user, "Member");
 
             await _signInManager.SignInAsync(user, false);
 

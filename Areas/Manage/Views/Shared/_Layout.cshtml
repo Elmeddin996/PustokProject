@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +18,9 @@
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="~/manage/css/sb-admin-2.css" rel="stylesheet">
+    <link href="~/manage/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="~/manage/css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -338,7 +341,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">@User.Identity.Name</span>
                                 <img class="img-profile rounded-circle"
                                      src="~/manage/img/undraw_profile.svg">
                             </a>
@@ -369,7 +372,9 @@
 
                 </nav>
                 <!-- End of Topbar -->
-               @RenderBody()
+                <!-- Begin Page Content -->
+                @RenderBody()
+                <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -425,16 +430,12 @@
 
     <!-- Page level plugins -->
     <script src="~/manage/vendor/chart.js/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 
     <!-- Page level custom scripts -->
     @RenderSection("Scripts",required:false)
     <script src="~/manage/js/main.js"></script>
-    <script src="~/manage/js/removeIcon.js"></script>
 
-   
+
 </body>
 
-</html>
+</html> 

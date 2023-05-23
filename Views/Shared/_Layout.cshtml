@@ -330,8 +330,21 @@
                             <div class="main-navigation flex-lg-right">
                                 <div class="cart-widget">
                                     <div class="login-block">
-                                        <a href="login-register.html" class="font-weight-bold">Login</a> <br>
-                                        <span>or</span><a href="login-register.html">Register</a>
+                                        @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+                                        {
+                                            <a asp-action="index" asp-controller="profile" class="font-weight-bold">@User.Identity.Name</a> <br>
+                                            <span>or</span>
+
+                                            <a asp-action="logout" asp-controller="account">Logout</a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="login" asp-controller="account" class="font-weight-bold">Login</a> <br>
+                                            <span>or</span>
+
+                                            <a asp-action="register" asp-controller="account">Register</a>
+                                        }
+
                                     </div>
                                     <div class="cart-block">
                                       @Html.Partial("_BasketPartialView",basket)

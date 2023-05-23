@@ -1,0 +1,37 @@
+﻿@model BookComment
+<h2 class="title-lg mb--20 pt--15">ADD A REVIEW</h2>
+<div class="rating-row pt-2">
+    <p class="d-block">Your Rating</p>
+    <span class="rating-widget-block">
+        <input form="commnetForm" type="radio" name="rate" value="5" id="star1">
+        <label for="star1"></label>
+        <input form="commnetForm" type="radio" name="rate" value="4" id="star2">
+        <label for="star2"></label>
+        <input form="commnetForm" type="radio" name="rate" value="3" id="star3">
+        <label for="star3"></label>
+        <input form="commnetForm" type="radio" name="rate" value="2" id="star4">
+        <label for="star4"></label>
+        <input form="commnetForm" type="radio" name="rate" value="1" id="star5">
+        <label for="star5"></label>
+    </span>
+    <span class="text-danger" asp-validation-for="Rate"></span>
+    <form id="commnetForm" asp-action="comment" method="post" class="mt--15 site-form ">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label asp-for="Text">Comment</label>
+                    <textarea asp-for="Text" cols="30" rows="10"
+                              class="form-control"></textarea>
+                              <span class="text-danger" asp-validation-for="Text"></span>
+                </div>
+            </div>
+
+            <input name="BookId" type="hidden" value="@Model.BookId" />
+            <div class="col-lg-4">
+                <div class="submit-btn">
+                    <button type="submit" class="btn btn-black">Post Comment</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

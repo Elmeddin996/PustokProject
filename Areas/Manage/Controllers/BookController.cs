@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PustokProject.DAL.DataAccess;
 using PustokProject.Helpers;
 using PustokProject.Models;
 using PustokProject.ViewModels;
+using System.Data;
 
 namespace P328Pustok.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "SuperAdmin,Admin")]
     [Area("manage")]
     public class BookController : Controller
     {

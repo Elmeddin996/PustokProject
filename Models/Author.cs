@@ -10,7 +10,7 @@ namespace PustokProject.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(20)]
-        public string FullName { get; set; } 
+        public string FullName { get; set; }
         public string ImageName { get; set; }
 
         [MaxFileSize(2097152)]

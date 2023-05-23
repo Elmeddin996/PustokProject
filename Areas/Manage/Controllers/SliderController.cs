@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PustokProject.DAL.DataAccess;
 using PustokProject.Helpers;
 using PustokProject.Models;
 using PustokProject.ViewModels;
+using System.Data;
 
 namespace PustokProject.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "SuperAdmin,Admin")]
     [Area("manage")]
     public class SliderController : Controller
     {

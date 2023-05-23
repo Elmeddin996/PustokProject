@@ -6,7 +6,6 @@ $(document).on("click", ".modal-btn", function (e) {
     fetch(url)
         .then(response => {
 
-            console.log(response)
             if (response.ok) {
                 return response.text()
             }

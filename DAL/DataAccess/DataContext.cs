@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using P328Pustok.Models;
 using PustokProject.Models;
 
 namespace PustokProject.DAL.DataAccess
@@ -18,6 +19,8 @@ namespace PustokProject.DAL.DataAccess
         public DbSet<BookTag> BookTags { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<BookComment> BookComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using PustokProject.Attributes.ValidationAttributes;
+using P328Pustok.Models;
 
 namespace PustokProject.Models
 {
@@ -54,8 +55,8 @@ namespace PustokProject.Models
         public List<BookImage> BookImages { get; set; } = new List<BookImage>();
         public List<BookTag> BookTags { get; set; } = new List<BookTag>();
 
-       
-     
+        public List<BookComment> BookComments { get; set; }
+
 
     }
 }

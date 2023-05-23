@@ -1,33 +1,49 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PustokProject.Areas.Manage.ViewModels;
 using PustokProject.Models;
+using System.Data;
 
 namespace PustokProject.Areas.Manage.Controllers
 {
-
     [Area("manage")]
     public class AccountController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
-        //public async Task<IActionResult> CreateAdmin()
+
+        public async Task<IActionResult> CreateAdmin()
+        {
+            AppUser user = new AppUser
+            {
+                UserName = "admin",
+                IsAdmin = true,
+            };
+
+            var result = await _userManager.CreateAsync(user, "Admin123");
+
+            await _userManager.AddToRoleAsync(user, "SuperAdmin");
+
+            return Json(result);
+        }
+
+        //public async Task<IActionResult> CreateRoles()
         //{
-        //    AppUser user = new AppUser
-        //    {
-        //        UserName = "admin",
-        //        IsAdmin = true,
-        //    };
+        //    await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Member"));
 
-        //    var result = await _userManager.CreateAsync(user, "Admin123");
-
-        //    return Json(result);
+        //    return Ok();
         //}
 
 

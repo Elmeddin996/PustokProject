@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PustokProject.DAL.DataAccess;
 using PustokProject.Models;
 using PustokProject.ViewModels;
+using System.Data;
 
 namespace PustokProject.Areas.Manage.Controllers
 {
+    [Authorize(Roles = "SuperAdmin,Admin")]
     [Area("manage")]
     public class GenreController : Controller
     {
