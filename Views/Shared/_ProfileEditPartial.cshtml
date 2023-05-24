@@ -1,0 +1,50 @@
+﻿@model ProfileEditViewModel
+<form asp-action="profile" method="post">
+    <div class="row">
+        <div class="col-lg-6 col-12  mb--30">
+            <input id="first-name" placeholder="Full Name" asp-for="FullName">
+            <span class="text-danger" asp-validation-for="FullName"></span>
+        </div>
+        <div class="col-lg-6 col-12  mb--30">
+            <input id="last-name" placeholder="Email" asp-for="Email">
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="col-lg-6 col-12  mb--30">
+            <input id="last-name" placeholder="UserName" asp-for="UserName">
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+        <div class="col-lg-6 col-12  mb--30">
+            <input id="last-name" placeholder="Phone" asp-for="Phone">
+            <span class="text-danger" asp-validation-for="Phone"></span>
+        </div>
+        <div class="col-12  mb--30">
+            <input id="display-name" placeholder="Address"
+                   asp-for="Address">
+            <span class="text-danger" asp-validation-for="Address"></span>
+        </div>
+        <div class="col-12  mb--30">
+            <h4>Password change</h4>
+        </div>
+        <div class="col-12  mb--30">
+            <input id="current-pwd" placeholder="Current Password"
+                   asp-for="CurrentPassword">
+                   <span class="text-danger" asp-validation-for="CurrentPassword"></span>
+        </div>
+        <div class="col-lg-6 col-12  mb--30">
+            <input id="new-pwd" placeholder="New Password"
+                   asp-for="NewPassword">
+                   <span class="text-danger" asp-validation-for="NewPassword"></span>
+        </div>
+        <div class="col-lg-6 col-12  mb--30">
+            <input id="confirm-pwd" placeholder="Confirm Password"
+                   asp-for="ConfirmPassword">
+                   <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+        </div>
+           <div class="col-lg-6 col-12  mb--30">
+               <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+           </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn--primary">Save Changes</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+﻿@model OrderCreateViewModel
+<div class="col-lg-7 mb--20">
+    <form id="checkoutForm" method="post" asp-action="create">
+        <!-- Billing Address -->
+        <div id="billing-form" class="mb-40">
+            <h4 class="checkout-title">Billing Address</h4>
+            <div class="row">
+                <div class="col-md-6 col-12 mb--20">
+                    <label asp-for="FullName">FullName</label>
+                    <input asp-for="FullName" type="text" placeholder="">
+                    <span class="text-danger" asp-validation-for="FullName"></span>
+                </div>
+                <div class="col-md-6 col-12 mb--20">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" type="text" placeholder="">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+                <div class="col-md-12 col-12 mb--20">
+                    <label asp-for="Phone">Phone</label>
+                    <input asp-for="Phone" type="text" placeholder="">
+                    <span class="text-danger" asp-validation-for="Phone"></span>
+                </div>
+                  <div class="col-md-12 col-12 mb--20">
+                    <label asp-for="Address">Address</label>
+                    <input asp-for="Address" type="text" placeholder="">
+                    <span class="text-danger" asp-validation-for="Address"></span>
+                </div>
+            </div>
+        </div>
+        <div class="order-note-block mt--30">
+            <label asp-for="Note">Order notes</label>
+            <textarea asp-for="Note" cols="30" rows="10" class="order-note"
+                      placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+            <span class="text-danger" asp-validation-for="Note"></span>
+
+        </div>
+    </form>
+</div>
