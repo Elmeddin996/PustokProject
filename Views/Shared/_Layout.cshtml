@@ -19,6 +19,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="~/css/plugins.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="~/css/main.css" />
     <link rel="shortcut icon" type="image/x-icon" href="~/image/favicon.ico">
+    @RenderSection("styles", required: false)
+
 </head>
 
 <body>
@@ -332,7 +334,7 @@
                                     <div class="login-block">
                                         @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
                                         {
-                                            <a asp-action="index" asp-controller="profile" class="font-weight-bold">@User.Identity.Name</a> <br>
+                                            <a asp-action="profile" asp-controller="account" class="font-weight-bold">@User.Identity.Name</a> <br>
                                             <span>or</span>
 
                                             <a asp-action="logout" asp-controller="account">Logout</a>
@@ -826,6 +828,7 @@
                 </div>
             </div>
         </div>
+
         @RenderBody()
 
     </div>

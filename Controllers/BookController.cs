@@ -9,7 +9,7 @@ using PustokProject.ViewModels;
 using System.Security.Claims;
 using PustokProject.DAL.DataAccess;
 
-namespace P328Pustok.Controllers
+namespace PustokProject.Controllers
 {
     public class BookController : Controller
     {

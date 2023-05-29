@@ -22,6 +22,25 @@ builder.Services.AddScoped<LayoutServices>();
 
 builder.Services.AddHttpContextAccessor();
 
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = options.Events.OnRedirectToAccessDenied = context =>
+    {
+        if (context.HttpContext.Request.Path.Value.StartsWith("/manage"))
+        {
+            var redirectUri = new Uri(context.RedirectUri);
+            context.Response.Redirect("/manage/account/login" + redirectUri.Query);
+        }
+        else
+        {
+            var redirectUri = new Uri(context.RedirectUri);
+            context.Response.Redirect("/account/login" + redirectUri.Query);
+        }
+
+        return Task.CompletedTask;
+    };
+});
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())

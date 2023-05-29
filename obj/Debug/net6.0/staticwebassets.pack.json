@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\css\\ordertable.css",
+      "PackagePath": "staticwebassets\\css\\ordertable.css"
+    },
+    {
       "Id": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\css\\plugins.css",
       "PackagePath": "staticwebassets\\css\\plugins.css"
     },
@@ -407,6 +411,10 @@
     {
       "Id": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\js\\ajax-mail.js",
       "PackagePath": "staticwebassets\\js\\ajax-mail.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\js\\bookComment.js",
+      "PackagePath": "staticwebassets\\js\\bookComment.js"
     },
     {
       "Id": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\js\\custom.js",

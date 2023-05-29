@@ -23,6 +23,6 @@ namespace PustokProject.Models
         public DateTime CreatedAt { get; set; }
         public OrderStatus Status { get; set; }
         public AppUser AppUser { get; set; }
-        public List<OrderItem> OrderItems { get; set; }
+        public List<OrderItem> OrderItems { get; set; }= new List<OrderItem>();
     }
 }

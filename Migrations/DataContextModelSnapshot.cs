@@ -252,40 +252,6 @@ namespace PustokProject.Migrations
                     b.ToTable("BasketItems");
                 });
 
-            modelBuilder.Entity("P328Pustok.Models.BookComment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Rate")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.HasIndex("BookId");
-
-                    b.ToTable("BookComments");
-                });
-
             modelBuilder.Entity("PustokProject.Models.Author", b =>
                 {
                     b.Property<int>("Id")
@@ -357,6 +323,40 @@ namespace PustokProject.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("PustokProject.Models.BookComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("BookComments");
+                });
+
             modelBuilder.Entity("PustokProject.Models.BookImage", b =>
                 {
                     b.Property<int>("Id")
@@ -412,6 +412,87 @@ namespace PustokProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
+                });
+
+            modelBuilder.Entity("PustokProject.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Note")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("PustokProject.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("DiscountPercent")
+                        .HasColumnType("money");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitCostPrice")
+                        .HasColumnType("money");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasColumnType("money");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("PustokProject.Models.Setting", b =>
@@ -487,11 +568,17 @@ namespace PustokProject.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
+                    b.Property<string>("Adress")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("AppUser");
                 });
@@ -564,23 +651,6 @@ namespace PustokProject.Migrations
                     b.Navigation("Book");
                 });
 
-            modelBuilder.Entity("P328Pustok.Models.BookComment", b =>
-                {
-                    b.HasOne("PustokProject.Models.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId");
-
-                    b.HasOne("PustokProject.Models.Book", "Book")
-                        .WithMany("BookComments")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AppUser");
-
-                    b.Navigation("Book");
-                });
-
             modelBuilder.Entity("PustokProject.Models.Book", b =>
                 {
                     b.HasOne("PustokProject.Models.Author", "Author")
@@ -598,6 +668,23 @@ namespace PustokProject.Migrations
                     b.Navigation("Author");
 
                     b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("PustokProject.Models.BookComment", b =>
+                {
+                    b.HasOne("PustokProject.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("PustokProject.Models.Book", "Book")
+                        .WithMany("BookComments")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("PustokProject.Models.BookImage", b =>
@@ -630,6 +717,34 @@ namespace PustokProject.Migrations
                     b.Navigation("Tag");
                 });
 
+            modelBuilder.Entity("PustokProject.Models.Order", b =>
+                {
+                    b.HasOne("PustokProject.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("PustokProject.Models.OrderItem", b =>
+                {
+                    b.HasOne("PustokProject.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PustokProject.Models.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("PustokProject.Models.Author", b =>
                 {
                     b.Navigation("Books");
@@ -642,6 +757,11 @@ namespace PustokProject.Migrations
                     b.Navigation("BookImages");
 
                     b.Navigation("BookTags");
+                });
+
+            modelBuilder.Entity("PustokProject.Models.Order", b =>
+                {
+                    b.Navigation("OrderItems");
                 });
 #pragma warning restore 612, 618
         }

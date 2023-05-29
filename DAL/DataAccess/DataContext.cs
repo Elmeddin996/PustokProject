@@ -21,8 +21,10 @@ namespace PustokProject.DAL.DataAccess
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<BookComment> BookComments { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> Items { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+                protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BookTag>().HasKey(x => new { x.BookId, x.TagId });
             modelBuilder.Entity<Setting>().HasKey(x => x.Key);

@@ -1,0 +1,39 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">FullName: @Model.FullName</h5>
+                <h5 class="card-title">Email: @Model.Email</h5>
+                <h5 class="card-title">Phone: @Model.Phone</h5>
+                <h5 class="card-title">Address: @Model.Address</h5>
+                <h5 class="card-title">Note: @Model.Note</h5>
+                <h5 class="card-title">Date: @Model.CreatedAt.ToString("dd-MM-yyyy HH:mm")</h5>
+
+            </div>
+            <ul class="list-group list-group-flush">
+                @foreach (var item in Model.OrderItems)
+                {
+                    <li class="list-group-item">@item.Book.Name - @item.Count X @item.UnitPrice.ToString("0.00")</li>
+                }
+                <li class="list-group-item">Total: @Model.OrderItems.Sum(x=>x.Count*x.UnitPrice).ToString("0.00")</li>
+            </ul>
+            @if(Model.Status == OrderStatus.Pending){
+            <div class="card-body">
+                <a asp-action="accept" asp-route-id="@Model.Id" class="btn btn-success">Accept</a>
+                <a asp-action="reject" asp-route-id="@Model.Id" class="btn btn-danger">Reject</a>
+                </div>
+            }
+            else
+            {
+                <button class="btn btn-@(Model.Status==OrderStatus.Rejected?"danger":"success")">@Model.Status.ToString()</button>
+            }
+           
+        </div>
+    </div>
+</div>

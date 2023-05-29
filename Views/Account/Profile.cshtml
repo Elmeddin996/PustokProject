@@ -1,4 +1,7 @@
 ﻿@model AccountProfileViewModel
+@{
+    int count = 0;
+}
 <section class="breadcrumb-section">
     <h2 class="sr-only">Site Breadcrumb</h2>
     <div class="container">
@@ -38,7 +41,7 @@
                                 <div class="myaccount-content">
                                     <h3>Account Details</h3>
                                     <div class="account-details-form">
-                                        @Html.Partial("_ProfileEditPartial",Model.Profile)
+                                        @Html.Partial("_profileEditPartial",Model.Profile)
                                     </div>
                                 </div>
                             </div>
@@ -47,43 +50,43 @@
                             <div class="tab-pane fade" id="orders" role="tabpanel">
                                 <div class="myaccount-content">
                                     <h3>Orders</h3>
-                                    <div class="myaccount-table table-responsive text-center">
-                                        <table class="table table-bordered">
-                                            <thead class="thead-light">
+                                    <div class="table-responsive table-borderless">
+                                        <table class="table">
+                                            <thead>
                                                 <tr>
-                                                    <th>No</th>
-                                                    <th>Name</th>
+                                                    <th class="text-center">S. No.</th>
+                                                    <th>Order #</th>
                                                     <th>Date</th>
-                                                    <th>Status</th>
                                                     <th>Total</th>
-                                                    <th>Action</th>
+                                                    <th>Status</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Mostarizing Oil</td>
-                                                    <td>Aug 22, 2018</td>
-                                                    <td>Pending</td>
-                                                    <td>$45</td>
-                                                    <td><a href="cart.html" class="btn">View</a></td>
+                                            <tbody class="table-body">
+
+                                                @foreach (var order in Model.Orders)
+                                                {
+                                                    count++;
+                                                    <tr class="cell-1" data-toggle="collapse" data-target="#demo-@order.Id">
+                                                    <td class="text-center">@count</td>
+                                                    <td>#SO-13487</td>
+                                                    <td>@order.CreatedAt.ToString("dd-MM-yyyy")</td>
+                                                        <td>$@order.OrderItems.Sum(x=>x.Count*x.UnitPrice).ToString("0.00")</td>
+                                                    <td><span class="badge badge-@(order.Status==OrderStatus.Pending?"warning":(order.Status==OrderStatus.Rejected?"danger":"success"))">@order.Status.ToString()</span></td>
+                                                    <td class="table-elipse" data-toggle="collapse" data-target="#demo"><i class="fa fa-ellipsis-h text-black-50"></i></td>
                                                 </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Katopeno Altuni</td>
-                                                    <td>July 22, 2018</td>
-                                                    <td>Approved</td>
-                                                    <td>$100</td>
-                                                    <td><a href="cart.html" class="btn">View</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Murikhete Paris</td>
-                                                    <td>June 12, 2017</td>
-                                                    <td>On Hold</td>
-                                                    <td>$99</td>
-                                                    <td><a href="cart.html" class="btn">View</a></td>
-                                                </tr>
+                                                foreach (var item in order.OrderItems)
+                                                    {
+                                                        <tr id="demo-@order.Id" class="collapse cell-1 row-child">
+                                                            <td class="text-center" colspan="1"><i class="fa fa-angle-up"></i></td>
+                                                            <td colspan="3">@item.Book.Name</td>
+                                                            <td colspan="1">QTY:</td>
+                                                            <td colspan="2">@item.UnitPrice.ToString("0.00") X @item.Count</td>
+                                                        </tr>
+                                                    }
+                                                 
+                                                }
+                                              
                                             </tbody>
                                         </table>
                                     </div>
@@ -98,3 +101,7 @@
         </div>
     </div>
 </div>
+
+@section styles{
+    <link rel="stylesheet" type="text/css" media="screen" href="~/css/ordertable.css" />
+}

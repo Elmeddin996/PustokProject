@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hW3sl38kIvleur8YGfAC0i/fStkHDg3nOmA536VOQ5U=",
+  "Hash": "wFU1i4GB0Znlhp5dRGWi0Ec7XI3p8nMc5ygNV8EyNUY=",
   "Source": "PustokProject",
   "BasePath": "_content/PustokProject",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\main.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\css\\ordertable.css",
+      "SourceId": "PustokProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\",
+      "BasePath": "_content/PustokProject",
+      "RelativePath": "css/ordertable.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ordertable.css"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\css\\plugins.css",
@@ -1766,6 +1783,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\ajax-mail.js"
+    },
+    {
+      "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\js\\bookComment.js",
+      "SourceId": "PustokProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\",
+      "BasePath": "_content/PustokProject",
+      "RelativePath": "js/bookComment.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\bookComment.js"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\js\\custom.js",

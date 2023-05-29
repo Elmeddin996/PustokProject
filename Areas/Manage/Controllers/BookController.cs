@@ -7,7 +7,7 @@ using PustokProject.Models;
 using PustokProject.ViewModels;
 using System.Data;
 
-namespace P328Pustok.Areas.Manage.Controllers
+namespace PustokProject.Areas.Manage.Controllers
 {
     [Authorize(Roles = "SuperAdmin,Admin")]
     [Area("manage")]
