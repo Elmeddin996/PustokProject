@@ -32,7 +32,7 @@ namespace PustokProject.Areas.Manage.Controllers
 
             ViewBag.Search = search;
 
-            return View(PaginatedList<Book>.Create(query, page, 3));
+            return View(PaginatedList<Book>.Create(query, page, 1));
         }
 
         public IActionResult Create()

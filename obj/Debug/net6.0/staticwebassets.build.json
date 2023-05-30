@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wFU1i4GB0Znlhp5dRGWi0Ec7XI3p8nMc5ygNV8EyNUY=",
+  "Hash": "gJB7ZJWtLmddG2hzNoYVhjvt2a8A0OfuJfHUaaz6g94=",
   "Source": "PustokProject",
   "BasePath": "_content/PustokProject",
   "Mode": "Default",
@@ -1783,23 +1783,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\ajax-mail.js"
-    },
-    {
-      "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\js\\bookComment.js",
-      "SourceId": "PustokProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\",
-      "BasePath": "_content/PustokProject",
-      "RelativePath": "js/bookComment.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\bookComment.js"
     },
     {
       "Identity": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\wwwroot\\js\\custom.js",
