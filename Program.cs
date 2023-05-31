@@ -19,8 +19,16 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<DataContext>();
 
 builder.Services.AddScoped<LayoutServices>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+
 
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddAuthentication().AddGoogle(opt =>
+{
+    opt.ClientId = "15956077951-h2035st2ttvu09rgntias36ir67ki5u6.apps.googleusercontent.com";
+    opt.ClientSecret = "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";
+});
 
 builder.Services.ConfigureApplicationCookie(options =>
 {

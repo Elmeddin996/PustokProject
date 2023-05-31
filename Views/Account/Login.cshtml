@@ -39,14 +39,24 @@
                                 <input asp-for="Password" class="mb-0 form-control" />
                                 <span class="text-danger" asp-validation-for="Password"></span>
                             </div>
-                            <a asp-action="forgetpassword">Forget password</a>
+                            <div class="col-md-12 col-12 mb--15">
+                                <a asp-action="forgetpassword">Forget password</a>
+                            </div>
                             <div class="col-md-12">
                                 <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-outlined">Login</button>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button type="submit" class="btn btn-outlined">Login</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a asp-action="googlelogin" class="btn btn-outlined">Google Login</a>
+                                    </div>
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
                 </form>
             </div>

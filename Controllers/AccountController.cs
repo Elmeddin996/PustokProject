@@ -11,6 +11,8 @@ using MailKit.Security;
 using MimeKit;
 using MimeKit.Text;
 using System.Net;
+using PustokProject.Services;
+using System.Security.Claims;
 
 namespace PustokProject.Controllers
 {
@@ -19,12 +21,14 @@ namespace PustokProject.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly DataContext _context;
+        private readonly IEmailSender _emailSender;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, DataContext context)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, DataContext context, IEmailSender emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+            _emailSender = emailSender;
         }
         public IActionResult Login()
         {
@@ -238,38 +242,11 @@ namespace PustokProject.Controllers
 
             string url = Url.Action("resetpassword", "account", new { email = passwordVM.Email, token = token }, Request.Scheme);
 
+            _emailSender.Send(passwordVM.Email, "Reset Password", $"Click <a href=\"{url}\">here</a> to reset your password");
 
-            var fromAddress = new MailAddress("ahmad.vandervort@ethereal.email");
+            return RedirectToAction("login");
 
-            var toAdress = new MailAddress(user.Email);
 
-            const string fromPassword = "ZDZyC89nYkw4YSEjZR";
-            const string subject = "Password Reset Request";
-            string body = $"Please click on the following link to reset your password: {url}";
-            
-
-            var smtp = new System.Net.Mail.SmtpClient
-            {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                UseDefaultCredentials = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
-                Timeout = 20000
-            };
-
-            using (var message = new MailMessage(fromAddress, toAdress)
-            {
-                Subject = subject,
-                Body = body
-            })
-            {
-                smtp.Send(message);
-            }
-
-            return View();
-
-           
         }
 
         public async Task<IActionResult> Resetpassword(string email, string token)
@@ -303,5 +280,40 @@ namespace PustokProject.Controllers
 
             return RedirectToAction("login");
         }
+
+        public IActionResult GoogleLogin()
+        {
+            string url = Url.Action("googleresponse", "account", Request.Scheme);
+
+            var prop = _signInManager.ConfigureExternalAuthenticationProperties("Google", url);
+
+            return new ChallengeResult("Google", prop);
+        }
+
+        public async Task<IActionResult> GoogleResponse()
+        {
+            var info = _signInManager?.GetExternalLoginInfoAsync().Result;
+
+            if (info == null) return RedirectToAction("login");
+
+            var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+
+            AppUser user = _userManager.FindByEmailAsync(email).Result;
+
+            if (user == null)
+            {
+                user = new AppUser { Email = email, UserName = email };
+                var result = _userManager.CreateAsync(user).Result;
+
+                if (!result.Succeeded) return RedirectToAction("login");
+
+                await _userManager.AddToRoleAsync(user, "Member");
+            }
+
+            await _signInManager.SignInAsync(user, false);
+
+            return RedirectToAction("index", "home");
+        }
+
     }
 }
