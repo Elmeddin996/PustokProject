@@ -27,5 +27,11 @@ namespace PustokProject.Controllers
             return View(vm);
         }
 
+        public IActionResult Search(string search)
+        {
+            var searchedBooks = _context.Books.Where(x => x.Name.ToLower().Trim().Contains(search.ToLower().Trim())).ToList();
+            return PartialView("_SearchPartialView", searchedBooks);  
+        }
+
     }
 }

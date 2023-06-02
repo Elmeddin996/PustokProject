@@ -13,6 +13,7 @@ using MimeKit.Text;
 using System.Net;
 using PustokProject.Services;
 using System.Security.Claims;
+using System.Security.Policy;
 
 namespace PustokProject.Controllers
 {
@@ -104,11 +105,38 @@ namespace PustokProject.Controllers
                 return View();
             }
 
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var confirmationLink = Url.Action(nameof(ConfirmEmail), "Account", new { token, email = user.Email }, Request.Scheme);
+
+             _emailSender.Send(user.Email, "Email Confirme", $"Click <a href=\"{confirmationLink}\">here</a> to verification your email");
+
             await _userManager.AddToRoleAsync(user, "Member");
 
-            await _signInManager.SignInAsync(user, false);
 
-            return RedirectToAction("index", "home");
+            return RedirectToAction(nameof(SuccessRegistration));
+        }
+
+     
+        public async Task<IActionResult> ConfirmEmail()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string token, string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+                return View("Error");
+
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            return View(result.Succeeded ? nameof(ConfirmEmail) : "Error");
+        }
+
+        [HttpGet]
+        public IActionResult SuccessRegistration()
+        {
+            return View();
         }
 
         public async Task<IActionResult> Logout()

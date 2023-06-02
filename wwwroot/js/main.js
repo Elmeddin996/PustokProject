@@ -49,3 +49,20 @@ $(document).on("click", ".removefrombasket", function (e) {
             $(".cart-block").html(data)
         })
 })
+
+$(document).on("keyup", "#inputSearch", function (e) {
+    var searchedBook = $(this).val()
+
+    $("#searchArea li").remove();
+    $.ajax({
+        url: "/home/search?search=" + searchedBook,
+        type: 'GET',
+        success: function (html) {
+            
+            $("#searchArea").append(html)
+        }
+    });
+
+})
+
+
