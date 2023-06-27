@@ -9,197 +9,197 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PustokProject
 build_property.RootNamespace = PustokProject
-build_property.ProjectDir = C:\Users\User\OneDrive\Desktop\PustokProject\
+build_property.ProjectDir = C:\Users\User\OneDrive\Desktop\Back-End\PustokProject\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User\OneDrive\Desktop\PustokProject
+build_property.MSBuildProjectDirectory = C:\Users\User\OneDrive\Desktop\Back-End\PustokProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Account/Login.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFjY291bnRcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Author/Create.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Author/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEF1dGhvclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Author/Edit.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Author/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEF1dGhvclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Author/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Author/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEF1dGhvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Book/Create.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Book/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJvb2tcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Book/Edit.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Book/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJvb2tcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Book/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Book/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJvb2tcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Dashboard/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Genre/Create.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Genre/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbnJlXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Genre/Edit.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Genre/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbnJlXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Genre/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Genre/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbnJlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Order/Detail.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Order/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9yZGVyXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Order/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9yZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Shared/_Layout.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Slider/Create.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Slider/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Slider/Edit.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Slider/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Slider/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Slider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Tag/Create.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Tag/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRhZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Tag/Edit.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Tag/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRhZ1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/Tag/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/Tag/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRhZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/_ViewImports.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Areas/Manage/Views/_ViewStart.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Areas/Manage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Account/ConfirmEmail.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Account/ForgetPassword.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Account/ForgetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3JnZXRQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Account/Login.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Account/Profile.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Account/Register.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Account/Resetpassword.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Account/Resetpassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldHBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Account/SuccessRegistration.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Account/SuccessRegistration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdWNjZXNzUmVnaXN0cmF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Book/Detail.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Book/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Home/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Home/Privacy.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Order/Checkout.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Order/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/Error.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_BasketPartialView.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_BasketPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNrZXRQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_BookCommentFormPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_BookCommentFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb29rQ29tbWVudEZvcm1QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_BookModelPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_BookModelPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb29rTW9kZWxQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_BookTabContentPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_BookTabContentPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb29rVGFiQ29udGVudFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_CheckoutFormPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_CheckoutFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DaGVja291dEZvcm1QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_ProfileEditPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_ProfileEditPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9maWxlRWRpdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_SearchPartialView.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_SearchPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TZWFyY2hQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shop/Index.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/_ViewImports.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/_ViewStart.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/OneDrive/Desktop/PustokProject/Views/Shared/_Layout.cshtml]
+[C:/Users/User/OneDrive/Desktop/Back-End/PustokProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7dg998opff

@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>(opt =>
 {
-    opt.UseSqlServer(@"Server=DESKTOP-AMTUISF\SQLEXPRESS;Database=PustokProject;Trusted_Connection=true");
+    opt.UseSqlServer(@"Server=tcp:pustok.database.windows.net,1433;Initial Catalog=PustokProjectAzure;Persist Security Info=False;User ID=pustok;Password=Elmeddin5454340;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 });
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>

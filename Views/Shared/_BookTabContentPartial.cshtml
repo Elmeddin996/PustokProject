@@ -18,7 +18,7 @@
         <div class="single-slide">
             <div class="product-card">
                 <div class="product-header">
-                    <a href="#" class="author">
+                    <a asp-action="detail" asp-controller="book" asp-route-id="@item.Id" class="author">
                         @item.Author.FullName 
                     </a>
                     <h3>
@@ -29,21 +29,16 @@
                 </div>
                 <div class="product-card--body">
                     <div class="card-image">
-                        <img src="~/image/products/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName" alt="">
+                        <img src="~/uploads/books/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName" alt="">
                         <div class="hover-contents">
-                            <a href="product-details.html" class="hover-image">
-                                <img src="~/image/products/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==false)?.ImageName" alt="">
+                            <a asp-action="detail" asp-controller="book" asp-route-id="@item.Id"  class="hover-image">
+                                <img src="~/uploads/books/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==false)?.ImageName" alt="">
                             </a>
                             <div class="hover-btns">
                                 <a asp-action="addtobasket" asp-controller="book" asp-route-id="@item.Id" class="single-btn addtobasket">
                                     <i class="fas fa-shopping-basket"></i>
                                 </a>
-                                <a href="wishlist.html" class="single-btn">
-                                    <i class="fas fa-heart"></i>
-                                </a>
-                                <a href="compare.html" class="single-btn">
-                                    <i class="fas fa-random"></i>
-                                </a>
+                               
                                 <a asp-action="detail" asp-controller="book" asp-route-id="@item.Id"
                                class="single-btn modal-btn">
                                     <i class="fas fa-eye"></i>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\PustokProject.csproj": {}
+    "C:\\Users\\User\\OneDrive\\Desktop\\Back-End\\PustokProject\\PustokProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\PustokProject.csproj": {
+    "C:\\Users\\User\\OneDrive\\Desktop\\Back-End\\PustokProject\\PustokProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\PustokProject.csproj",
+        "projectUniqueName": "C:\\Users\\User\\OneDrive\\Desktop\\Back-End\\PustokProject\\PustokProject.csproj",
         "projectName": "PustokProject",
-        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\PustokProject.csproj",
+        "projectPath": "C:\\Users\\User\\OneDrive\\Desktop\\Back-End\\PustokProject\\PustokProject.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\PustokProject\\obj\\",
+        "outputPath": "C:\\Users\\User\\OneDrive\\Desktop\\Back-End\\PustokProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

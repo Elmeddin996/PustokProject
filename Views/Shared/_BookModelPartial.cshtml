@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-5">
                 <div class="single-slide">
-                    <img src="~/image/products/@Model.BookImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName" alt="">
+                    <img src="~/uploads/books/@Model.BookImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName" alt="">
                 </div>
             </div>
             <div class="col-lg-7 mt--30 mt-lg--30">
@@ -26,7 +26,8 @@
                     </p>
                     <h3 class="product-title">@Model.Name</h3>
                     <ul class="list-unstyled">
-                        <li>Author: <a href="#" class="list-value font-weight-bold"> @Model.Author.FullName</a></li>
+                        <li>Author: <a class="list-value font-weight-bold"> @Model.Author.FullName</a>
+                        </li>
                         <li>Availability: <span class="list-value">@(Model.StockStatus ? "In Stock" : "Out of Stock") </span></li>
                     </ul>
                     <div class="price-block">

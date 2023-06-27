@@ -67,6 +67,10 @@
                     <ul class="list-unstyled">
                         <li>Genres: <a href="#" class="list-value font-weight-bold"> @Model.Book.Genre.Name</a></li>
                         <li>Availability: <span class="list-value">@(Model.Book.StockStatus == true ?"In Stock":"out of stock")</span></li>
+                        <li>
+                            Author: <a class="list-value font-weight-bold"> @Model.Book.Author.FullName</a>
+                            <img src="~/uploads/authors/@Model.Book.Author.ImageName" style="width:30px">
+                        </li>
                     </ul>
                     <div class="price-block">
                         <span class="price-new">£@((Model.Book.DiscountPercent > 0 ? (Model.Book.SalePrice * (100 - Model.Book.DiscountPercent) / 100) : Model.Book.SalePrice).ToString("0.00"))</span>
